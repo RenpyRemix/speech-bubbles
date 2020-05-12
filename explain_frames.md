@@ -97,6 +97,16 @@ The `Frame` is a special type of displayable which can stretch or tile parts of 
 
 Let's take it one part at a time
 
+## Our Background Image
+
+This image will need to stretch or tile in certain places to match the size it needs. We can picture the areas that stretch, the fixed areas and the area allocated to the contained text in the following image.
+
+![Speech Bubble Areas](explain_images/speech_bubble_margins.png)
+
+The red shaded area is the parts that stretch. See that we have not let the curved corners stretch and have not let any part of the tail stretch.
+
+The blue shaded area represents the part where text can be placed. Note that it does not have to match the red stretchable parts, it can extend into the unstretched areas if wanted. As that part expands it causes the full Frame to expand and thus adjust the sizes of the stretched parts.
+
 ## The background Frame
 ```py
     background Frame(
@@ -104,7 +114,10 @@ Let's take it one part at a time
         left = Borders(32, 33, 88, 80)
         )
 ```
-Quite a simple one here. Just tell it the image we use and the values we want for each of the **non stretching** side areas.
+The first parameter tells it the image we use. This one is our actual file without any transformations.
 
-Taking the following image.
-![Speech Bubble Areas](explain_images/speech_bubble_margins.png)
+The `left = ` part specifies a Borders object which is just a way of passing the left, top, right and base values. If you prefer to just set the values to the Frame, feel free.
+
+You can see the values reflected in this image and can see that they relate to the distance from each edge inwards until they reach the red stretchable part.
+
+![Speech Bubble Frame Values](explain_images/speech_bubble_frame_values.png)
