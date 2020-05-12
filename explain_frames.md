@@ -39,10 +39,54 @@ define speech_bubble_k = Character(
     "Kaori", 
     screen="bubble_say", 
     what_style="bubble_speech_text",
-    who_color="#FDD")
+    what_color="#FDD")
 ```
 These now make sure that the dialogue text does not try to take the screen width or sit at an offset.
 
 ## Styling Frames
 
-Now we have made sure our text is appearing in a 
+Now we have made sure our text is appearing in a suitable rectangle we can handle how our frames respond to that (variable size) area.
+
+At a basic level, every subscreen is just:
+```py
+screen bubble_subscreen(who, **kwargs):
+
+    style_prefix "bubble_speech_baseright" # This is actually passed through keywords
+    
+    fixed:
+
+        pos (450, 320) # Our x, y position, also through keywords
+
+        frame:
+
+            text "The Text" # Actually transcluded from the parent screen
+```
+In order to get the `frame:` there to have a nice background (that expands to fit the contained text) we use a style beginning with the prefix and ending with `_frame`
+```py
+style bubble_speech_baseright_frame:
+
+    # our background picture
+    background Frame(
+        "images/speech_bubble.png", 
+        left = Borders(32, 33, 88, 80)
+        )
+
+    # These are the distance between the text area and frame outer edge
+    left_padding 24
+    top_padding 22
+    right_padding 23
+    bottom_padding 73
+    # We *could* do all that in one line with
+    # padding (24, 22, 23, 73) # (left, top, right, base)
+
+    minimum (121, 114)
+
+    # Now the anchor (the pixel of this widget to place at the stated pos)
+    # This should generally reflect where the end of the tail lies
+    anchor (1.0, 1.0)
+    # You could add a slight offset if wanted (so show_pos is on the tail)
+    offset (12, 7)
+```
+Let's take it one part at a time
+
+So, the frame: has a background which is a Frame
