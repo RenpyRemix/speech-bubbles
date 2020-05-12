@@ -1,6 +1,6 @@
 # Speech Bubbles
 
-#### Note: All you really need are the two files in [The game folder!](game). Just one image and a small script file.
+#### Note: All you really need are the two files in [The game folder](game). Just one image and a small script file.
 
 So, you want a system where each line of dialogue can appear at a set position in a frame that looks like a comic book speech bubble?
 
@@ -31,9 +31,9 @@ In order to achieve this, we need to handle several things:
 
 ### Important Reading:
 
-The overview of the system is more fully explained in [Speech Bubbles Overview!](explain_screens.md)
+The overview of the system is more fully explained in [Speech Bubbles Overview](explain_screens.md)
 
-The styling and settings for frame backgrounds are explained in [Frames & Styles!](explain_frames.md)
+The styling and settings for frame backgrounds are explained in [Frames & Styles](explain_frames.md)
 
 ### Please note:
 
