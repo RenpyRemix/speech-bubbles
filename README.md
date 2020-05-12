@@ -1,6 +1,6 @@
 # Speech Bubbles
 
-#### Note: All you really need are the two files in [The game folder](game). Just one image and a small script file.
+#### Note: All you really need are the two files in [The game folder](game). Just one image and a small script file. They can be dropped into a new or existing project and a sample will run before label start.
 
 So, you want a system where each line of dialogue can appear at a set position in a frame that looks like a comic book speech bubble?
 
