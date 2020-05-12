@@ -19,9 +19,16 @@ In order to achieve this, we need to handle several things:
 - Include a system wherein the subscreen parameters can be retained, allowing it to be reshown during the following dialogue
 - Adjust our Characters so they use the new screen say
 
-The overview of the screen system is explained in [explain_screens.md!](explain_screens.md)
+The overview of the system is explained in [Speech Bubbles Overview!](explain_screens.md)
 
-The styling and frames are explained in [explain_frames.md!](explain_frames.md)
+The styling and frames are explained in [Frames & Styles!](explain_frames.md)
+
+### Please note:
+
+The way this approach works might not be suitable for complete beginners. It is a basic platform on which to build a system that might grow to include many other styles (such as thought clouds, jagged exclaimation bubbles etc). As such it will likely require some knowledge of Ren'Py in order to extend it to your particular needs. 
+
+Though I have tried to explain it as simply as possible, I will not be available to help extend it unless under a paid contract.
+Basically, if you want it to do more, you are expected to know enough Ren'Py to handle that yourself (or consider paying someone)
 
 
 
