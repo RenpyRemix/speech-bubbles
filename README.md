@@ -15,23 +15,33 @@ Links at the end of this overview.")
 
 In order to achieve this, we need to handle several things:
 - Create a new screen say that can use subscreens to show each line of dialogue
+  - Creating a new screen lets us leave the normal one there if needed. 
+  - This new screen cycles through all the dialogue lines (bubbles) it should show and passes the parameters of each to a used subscreen
 - Create the subscreen and allow it to take parameters so each can display differently
+  - Using say arguments like `e "Hello World" (450, 280, "topleft")` the used subscreen can be positioned at (450, 280) and use a style with tail at "topleft"
+  - Additional keywords can be passed to adjust other settings
 - Include a system wherein the subscreen parameters can be retained, allowing it to be reshown during the following dialogue
+  - We use the `on "hide"` event of our new screen say to pass the current dialogue and settings to a function
+  - That function determines what if anything is retained to be reshown with the following line and stores them in a global
 - Adjust our Characters so they use the new screen say
+  - This includes changing their `what_style` so they do not use default settings intended for large dialogue windows
 
-The overview of the system is explained in [Speech Bubbles Overview!](explain_screens.md)
 
-The styling and frames are explained in [Frames & Styles!](explain_frames.md)
+### Important Reading:
+
+The overview of the system is more fully explained in [Speech Bubbles Overview!](explain_screens.md)
+
+The styling and settings for frame backgrounds are explained in [Frames & Styles!](explain_frames.md)
 
 ### Please note:
 
-The way this approach works might not be suitable for complete beginners. It is a basic platform on which to build a system that might grow to include many other styles (such as thought clouds, jagged exclaimation bubbles etc). As such it will likely require some knowledge of Ren'Py in order to extend it to your particular needs. 
+The way this approach works might not be suitable for complete beginners. It is a basic platform on which to build a system that might grow to include many other styles (such as thought clouds, jagged exclaimation bubbles, showing character names etc). As such it will likely require some knowledge of Ren'Py in order to extend it to your particular needs. 
 
 Though I have tried to explain it as simply as possible, I will not be available to help extend it unless under a paid contract.
 Basically, if you want it to do more, you are expected to know enough Ren'Py to handle that yourself (or consider paying someone)
 
 
-
+### Credits
 
 Background: https://pixabay.com/illustrations/landscape-nature-summer-forest-4026168/
 
