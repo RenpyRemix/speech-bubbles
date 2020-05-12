@@ -121,3 +121,37 @@ The `left = ` part specifies a Borders object which is just a way of passing the
 You can see the values reflected in this image and can see that they relate to the distance from each edge inwards until they reach the red stretchable part.
 
 ![Speech Bubble Frame Values](explain_images/speech_bubble_frame_values.png)
+
+## The frame: padding
+```py
+    # These are the distance between the text area and frame outer edge
+    left_padding 24
+    top_padding 22
+    right_padding 23
+    bottom_padding 73
+    # We *could* do all that in one line with
+    # padding (24, 22, 23, 73) # (left, top, right, base)
+```
+As the comments imply, these are paddings applied to the screen language `frame:` container and are used to tell the frame how much larger than its content it actually is.
+
+You can see the values reflected in this image and can see that they relate to the distance from each edge inwards until they reach the blue part designated for the text content.
+
+![Speech Bubble frame: padding](explain_images/speech_bubble_padding_values.png)
+
+## Other style values
+```py
+    minimum (121, 114)
+```
+This setting just makes sure our Speech Bubble does not shrink too small and look strange. 
+
+```py
+    # Now the anchor (the pixel of this widget to place at the stated pos)
+    # This should generally reflect where the end of the tail lies
+    anchor (1.0, 1.0)
+    # You could add a slight offset if wanted (so show_pos is on the tail)
+    offset (12, 7)
+```
+These allow us to specify one corner of the `frame:` as our anchor and then fine tune that by a number of pixels so the point of the tail sits directly on the pos we passed for that line of dialogue.
+
+
+That style is basically repeated seven times to cover the tail being in eight different places.
