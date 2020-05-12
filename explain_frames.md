@@ -62,6 +62,8 @@ screen bubble_subscreen(who, **kwargs):
             text "The Text" # Actually transcluded from the parent screen
 ```
 In order to get the `frame:` there to have a nice background (that expands to fit the contained text) we use a style beginning with the prefix and ending with `_frame`
+
+We can have lots of these styles, one for each style of bubble we use - set up specially to accomodate the stretching image used as the background.
 ```py
 style bubble_speech_baseright_frame:
 
@@ -87,6 +89,22 @@ style bubble_speech_baseright_frame:
     # You could add a slight offset if wanted (so show_pos is on the tail)
     offset (12, 7)
 ```
+So, the `frame:` that the `_frame` style applies to has a background which is a `Frame`... hmmm... 
+
+The `frame:` is a screen language container which naturally shrinks to fit its contents.
+
+The `Frame` is a special type of displayable which can stretch or tile parts of itself to fit the size allocated to it.
+
 Let's take it one part at a time
 
-So, the frame: has a background which is a Frame
+## The background Frame
+```py
+    background Frame(
+        "images/speech_bubble.png", 
+        left = Borders(32, 33, 88, 80)
+        )
+```
+Quite a simple one here. Just tell it the image we use and the values we want for each of the **non stretching** side areas.
+
+Taking the following image.
+![Speech Bubble Areas](explain_images/speech_bubble_margins.png)
