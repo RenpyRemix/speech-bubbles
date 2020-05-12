@@ -99,6 +99,8 @@ Let's take it one part at a time
 
 ## Our Background Image
 
+![Speech Bubble Background Image](game/images/speech_bubble.png)
+
 This image will need to stretch or tile in certain places to match the size it needs. We can picture the areas that stretch, the fixed areas and the area allocated to the contained text in the following image.
 
 ![Speech Bubble Areas](explain_images/speech_bubble_margins.png)
