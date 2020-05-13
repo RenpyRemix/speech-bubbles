@@ -47,7 +47,7 @@ So we can check the line is real and not just a pre-game prediction
 ```py
         kwargs.pop('retain', 0),
 ```
-Easier to pull this one out of the kwargs as we reference it quite often. It specifies how many additional dialogues this particular line is meant to remain showing for.
+Easier to pull this one out of the kwargs and store it separately as we reference it quite often. It specifies how many additional dialogues this particular line is meant to remain showing for.
 ```py
         who,
         what,
@@ -55,4 +55,11 @@ Easier to pull this one out of the kwargs as we reference it quite often. It spe
 ```
 Usual stuff so we have much of the information to redisplay this line should we want to.
 
+Next the screen iterates through any previous dialogues that were set to retain and displays them by transcluding a simple text widget to the subscreen. That widget is styled from retained styles that we stored when the line was first displayed. It is just a simple text as we cannot have more than one widget with the id "what" in the screen.
+
+Next we display the current line by transcluding the normal widget (with the id "what") into another copy of the subscreen. 
+
+Once the line has been shown, we hook into the `on "hide"` event of the screen in order to pass all the information we have about the current dialogue to a named Python function
+
+## The subscreen
 
