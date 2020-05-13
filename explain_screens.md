@@ -57,9 +57,17 @@ Usual stuff so we have much of the information to redisplay this line should we 
 
 Next the screen iterates through any previous dialogues that were set to retain and displays them by transcluding a simple text widget to the subscreen. That widget is styled from retained styles that we stored when the line was first displayed. It is just a simple text as we cannot have more than one widget with the id "what" in the screen.
 
-Next we display the current line by transcluding the normal widget (with the id "what") into another copy of the subscreen. 
+Next we display the current line by transcluding the normal text widget (with the id "what") into another copy of the subscreen. 
 
-Once the line has been shown, we hook into the `on "hide"` event of the screen in order to pass all the information we have about the current dialogue to a named Python function
+Once the line has been shown, we hook into the `on "hide"` event of the screen in order to pass all the information we have about the current dialogue to a named Python function. This means, when the screen is hidden, we know that function is going to run once with all the details we collected about the current dialogue passed to it.
 
 ## The subscreen
+
+Just a basic screen that takes the sayer name (just in case you want to display it) and the keyword arguments that control the display. The simple version here just contains a fixed (for positioning) which contains a frame (for background styling) which contains the transcluded content.
+
+There are also a few lines which add a toggle-able white cross to help highlight the passed position.
+
+## The Python function
+
+## The Say Arguments Callback
 
