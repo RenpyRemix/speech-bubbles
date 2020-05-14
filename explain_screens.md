@@ -18,7 +18,7 @@ screen bubble_say(who, what, **kwargs):
         kwargs )
 
     # First the older (retained) dialogues
-    for idx, old_dialogue in enumerate(retained_dialogues):
+    for old_dialogue in retained_dialogues:
 
         $ old_who, old_what, old_kwargs = old_dialogue[2:]
 
