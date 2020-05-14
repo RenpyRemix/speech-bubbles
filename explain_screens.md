@@ -69,5 +69,62 @@ There are also a few lines which add a toggle-able white cross to help highlight
 
 ## The Python function
 
+```py
+    def hide_dialogue(current_dialogue=None, screen="bubble_say"):
+```
+This is our Python function that we call after the dialogue has been seen. We pass it the contents of the info tuple that we created in the screen along with the name of the screen
+```py
+        global retained_dialogues
+
+        next_retained_dialogues = []
+
+        for k in retained_dialogues:
+
+            k[1] -= 1
+
+            if k[1] > 0:
+
+                next_retained_dialogues.append(k)
+
+        retained_dialogues = next_retained_dialogues
+```
+First we look at the existing retained dialogues, decrease their `retain` value by one, check if they should be shown again and rebuild the global list with only those that should be reshown.
+```py
+        if current_dialogue and not current_dialogue[0][0].endswith('.rpym'):
+
+            # This is where you could add a feature so one dialogue could 
+            # alter setting for a retained dialogue (such as move it)
+
+            if current_dialogue[1] > 0:
+
+                # retain this one, so add it to the global
+
+                # first mirror the style applied to the text and add it
+                # to the kwargs
+
+                widget = renpy.get_widget(screen, 'what')
+                if widget:
+                    widget_style = {
+                        k : getattr(widget.style, k)
+                        for k in dir(widget.style)
+                        if k in retained_styles
+                    }
+                    current_dialogue[-1]['what_style'] = widget_style
+
+                retained_dialogues.append(list(current_dialogue))
+```
+Then we check our current dialogue, firstly making sure it is not just being predicted.
+
+If the current dialogue is set to `retain` we duplicate the styles it uses and add it to the global retained_dialogues list.
+To retain the styles we simply find the widget (we passed in the screen name and know it uses the id "what") and then read through the `.style` object to pull out the names and values we want (text properties and position properties).
+
+So, basically just check what is giong to be shown again and build a list containing all the information we need for each line.
+
 ## The Say Arguments Callback
+
+We *could* dispense with this part and solely pass all variable values using keywords. We could add `(show_xpos=100, show_ypos=200)` on a line to tell it to use those values. It's easier just putting the values though `(100, 200)`, especially for those values that change most often.
+
+We use `config.say_arguments_callback` to do this, re-interpreting the positional arguments in an output keyword dictionary.
+
+#### You should note that default values for all the settings are created here.
 
