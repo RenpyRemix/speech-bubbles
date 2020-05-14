@@ -181,6 +181,8 @@ style bubble_speech_rightbase_frame:
 style bubble_thought_baseright_frame is bubble_speech_baseright_frame:
     alt "Thinking"
 
+
+
                             ####################
                             #                  #
                             #     Screens      #
@@ -267,7 +269,7 @@ init python:
 
             if not "show_pos" in kwargs:
                 # Default POS as a list Not tuple
-                kwargs['show_pos'] = [800, 400] 
+                kwargs['show_pos'] = list(kwargs.get('show_pos', (800, 400))) 
 
                 if args and args[0] is not None:
                     kwargs['show_pos'][0] = args[0]
@@ -309,7 +311,7 @@ screen bubble_say(who, what, **kwargs):
         kwargs )
 
     # First the older (retained) dialogues
-    for idx, old_dialogue in enumerate(retained_dialogues):
+    for old_dialogue in retained_dialogues:
 
         $ old_who, old_what, old_kwargs = old_dialogue[2:]
 
@@ -396,21 +398,26 @@ init python:
 
 
 
-define speech_bubble_a = Character("Amber",
-                     screen="bubble_say", 
-                     what_color="#282", 
-                     what_style="bubble_speech_text",
-                     show_tail="leftbase")
+define speech_bubble_a = Character(
+    "Amber",
+    screen="bubble_say", 
+    what_color="#282", 
+    what_style="bubble_speech_text",
+    show_tail="leftbase")
 
-define speech_bubble_k = Character("Kaori", 
-                     screen="bubble_say", 
-                     who_color="#FDD", 
-                     what_style="bubble_speech_text")
+define speech_bubble_k = Character(
+    "Kaori", 
+    screen="bubble_say", 
+    who_color="#FDD", 
+    what_style="bubble_speech_text")
 
 
 init python:
 
+    # Just for this sample... so it runs
+
     config.label_overrides['start'] = "speech_bubble_example"
+    
 
 label speech_bubble_example:
 
@@ -424,7 +431,7 @@ label speech_bubble_example:
     speech bubble system in action...""" (950, 300, "righttop")
 
     speech_bubble_a "Style default (baseright)
-    \nYou can press Alt+C to show the used pos" (640, 320, show_xmax=500)
+    \nYou can press Alt+C to show the used pos" (640, 320, show_xmax=500, what_color="#888")
 
     speech_bubble_k "Style baseleft" (640, 320, "baseleft")
 
@@ -443,6 +450,8 @@ label speech_bubble_example:
     speech_bubble_a "... and back to the game" (
         640, 320, show_type="bubble_thought")
 
-    $ del config.label_overrides['start']
+    if "start" in config.label_overrides:
+
+        $ del config.label_overrides['start']
 
     jump start
