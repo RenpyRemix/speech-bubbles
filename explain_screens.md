@@ -92,9 +92,6 @@ First we look at the existing retained dialogues, decrease their `retain` value 
 ```py
         if current_dialogue and not current_dialogue[0][0].endswith('.rpym'):
 
-            # This is where you could add a feature so one dialogue could 
-            # alter setting for a retained dialogue (such as move it)
-
             if current_dialogue[1] > 0:
 
                 # retain this one, so add it to the global
@@ -116,9 +113,9 @@ First we look at the existing retained dialogues, decrease their `retain` value 
 Then we check our current dialogue, firstly making sure it is not just being predicted.
 
 If the current dialogue is set to `retain` we duplicate the styles it uses and add it to the global retained_dialogues list.
-To retain the styles we simply find the widget (we passed in the screen name and know it uses the id "what") and then read through the `.style` object to pull out the names and values we want (text properties and position properties).
+To retain the styles we simply find the widget (we passed in the screen name and know it uses the id "what") and then read through the `.style` object to pull out the names and values we want (text properties and positional properties).
 
-So, basically just check what is giong to be shown again and build a list containing all the information we need for each line.
+So, basically just check what is going to be shown again and build a list containing all the information we need for each line.
 
 ## The Say Arguments Callback
 
