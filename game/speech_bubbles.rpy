@@ -5,6 +5,10 @@
                             #                 #
                             ###################
 
+#
+# https://github.com/RenpyRemix/speech-bubbles/blob/master/explain_frames.md
+#
+
 # Characters who use the speech bubbles will need their what_style pointed
 # at a style similar to this 
 #
@@ -195,6 +199,10 @@ style bubble_thought_baseright_frame is bubble_speech_baseright_frame:
                 #
                 # Except maybe the callback if you want the default
                 # values to be different
+
+#
+# https://github.com/RenpyRemix/speech-bubbles/blob/master/explain_screens.md
+#
 
 default retained_dialogues = []
 
@@ -394,6 +402,10 @@ init python:
                             #                   #
                             #####################
 
+
+# 
+# https://github.com/RenpyRemix/speech-bubbles/blob/master/explain_usage.md
+#
 
 
 
