@@ -50,7 +50,7 @@ These values can also be passed by full keyword, along with the others here:
     e "..." (show_xmin = 440)
     # note: The frame itself has an xminimum (so the background pic does not shrink and look odd)
     # This setting is more useful when it matches show_xmax in order to use things like extend
-    # without the bubble changing size between each showing
+    # without the bubble changing size as the contained dialogue changes
 ```
 ### Style
 ```py
@@ -71,4 +71,18 @@ This setting just uses an integer to state how many times this line is reshown f
     l "..." # still showing the e line as well
     l "..." # now the e line is hidden
 ```
+You can of course pass multiple settings to the same line, can combine arguments and keywords.
+```py
+    e "..." (480, 320, show_type="bubble_thought", show_xmax=510, retain=4)
+```
+You can also set defaults for the keywords in your Characters. (inline values will still override these)
+```py
+define k_think = Character(
+    "Kaori", 
+    screen="bubble_say", 
+    what_style="bubble_speech_text",
+    show_type="bubble_thought",
+    show_pos=(300,300))
+```
+Hopefully the system is straight forward enough to extend to meet your needs.
 
