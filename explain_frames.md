@@ -159,11 +159,10 @@ These allow us to specify one corner of the `frame:` as our anchor and then fine
 That style is basically repeated seven times to cover the tail being in eight different places.
 
 
-
 ### Navigation:
 
 Back to the main page [Home](README.md)
 
 The overview of the system is more fully explained in [Speech Bubbles Overview](explain_screens.md)
 
-The parameters and usage guidelines are explained in [Using the Speech Bubbles system](explain_screens.md)
+The parameters and usage guidelines are explained in [Using the Speech Bubbles system](explain_usage.md)
