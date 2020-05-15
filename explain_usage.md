@@ -15,4 +15,31 @@ Those are the name of the parent screen and the style for the text. You can also
 
 ## Args and Keyword Args
 
-Each line of dialogue can pass arguments into the system to control how it is shown on the screen 
+Each line of dialogue can pass arguments into the system to control how it is shown on the screen. There are default values for any not supplied, just so we do not have to include every setting on every dialogue line. These can be found (and adjusted) in the `say_arguments_callback` function.
+
+The most commonly used settings can be supplied as positional arguments.
+```py
+    speech_bubble_k "Hello World" (650, 300, "righttop")
+```
+No need to tell it what each one is, it just knows that three optional arguments can be passed and, if they are passed, they relate to `(xpos, ypos, tail)`.
+
+We could adjust the position and use default tail ("baseright") by just passing the first two.
+
+```py
+    speech_bubble_k "Hello World" (650, 300)
+```
+
+These values can also be passed by full keyword, along with the others here:
+```py
+    # change the xpos of the fixed
+    e "..." (show_xpos = 140)
+    
+    # change the ypos of the fixed
+    e "..." (show_ypos = 100)
+
+    # change the combined pos of the fixed
+    e "..." (show_pos = (140, 100))
+
+    # change the 
+
+```
