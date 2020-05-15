@@ -30,6 +30,7 @@ We could adjust the position and use default tail ("baseright") by just passing 
 ```
 
 These values can also be passed by full keyword, along with the others here:
+### Position
 ```py
     # change the xpos of the fixed
     e "..." (show_xpos = 140)
@@ -39,7 +40,35 @@ These values can also be passed by full keyword, along with the others here:
 
     # change the combined pos of the fixed
     e "..." (show_pos = (140, 100))
-
-    # change the 
-
 ```
+### Size
+```py
+    # change the maximum width of the frame (allow it to expand to this width)
+    e "..." (show_xmax = 440)
+
+    # change the minimum width
+    e "..." (show_xmin = 440)
+    # note: The frame itself has an xminimum (so the background pic does not shrink and look odd)
+    # This setting is more useful when it matches show_xmax in order to use things like extend
+    # without the bubble changing size between each showing
+```
+### Style
+```py
+    # change the style prefix
+    e "..." (show_type="bubble_thought")
+    # this will use style bubble_thought_{show_tail}_frame
+    
+    # change the tail style (can be passed as the third argument)
+    e "..." (show_tail="baseleft")
+    # this will use style {show_type}_baseleft_frame
+```
+### Retain
+
+This setting just uses an integer to state how many times this line is reshown for.
+```py
+    # tell it to retain for one extra line
+    e "..." (show_retain = 1)
+    l "..." # still showing the e line as well
+    l "..." # now the e line is hidden
+```
+
