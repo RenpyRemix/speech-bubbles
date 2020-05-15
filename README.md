@@ -35,7 +35,7 @@ The overview of the system is more fully explained in [Speech Bubbles Overview](
 
 The styling and settings for frame backgrounds are explained in [Frames & Styles](explain_frames.md)
 
-The parameters and usage guidelines are explained in [Using the Speech Bubbles system](explain_screens.md)
+The parameters and usage guidelines are explained in [Using the Speech Bubbles system](explain_usage.md)
 
 ### Please note:
 
