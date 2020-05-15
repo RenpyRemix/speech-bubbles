@@ -35,6 +35,8 @@ The overview of the system is more fully explained in [Speech Bubbles Overview](
 
 The styling and settings for frame backgrounds are explained in [Frames & Styles](explain_frames.md)
 
+The parameters and usage guidelines are explained in [Using the Speech Bubbles system](explain_screens.md)
+
 ### Please note:
 
 The way this approach works might not be suitable for complete beginners. It is a basic platform on which to build a system that might grow to include many other styles (such as thought clouds, jagged exclaimation bubbles, showing character names etc). As such it will likely require some knowledge of Ren'Py in order to extend it to your particular needs. 
