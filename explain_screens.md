@@ -125,3 +125,13 @@ We use `config.say_arguments_callback` to do this, re-interpreting the positiona
 
 #### You should note that default values for all the settings are created here.
 
+
+### Navigation:
+
+[Home](README.md)
+
+The overview of the system is more fully explained in [Speech Bubbles Overview](explain_screens.md)
+
+The styling and settings for frame backgrounds are explained in [Frames & Styles](explain_frames.md)
+
+The parameters and usage guidelines are explained in [Using the Speech Bubbles system](explain_screens.md)
