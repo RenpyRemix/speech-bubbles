@@ -13,6 +13,8 @@ Pixabay for the background
 Kid Blue for the sprite images
 Links at the end of this overview.")
 
+[![Support me on Patreon](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/bePatron?u=19978585)
+
 # Speech Bubbles in Ren'Py
 
 In order to achieve this, we need to handle several things:
