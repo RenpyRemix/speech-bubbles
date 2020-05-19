@@ -1,6 +1,7 @@
 # Speech Bubbles
 
-#### Note: All you really need are the two files in [The game folder](game). Just one image and a small script file. They can be dropped into a new or existing project and a sample will run before label start. Alternatively, just clone the lot as a zip from [The Repository Main Page](https://github.com/RenpyRemix/speech-bubbles)
+#### Note: All you really need are the two files in [The game folder](game). Just one image and a small script file. They can be dropped into a new or existing project and a sample will run before label start. 
+#### Alternatively, just clone the lot as a zip from [The Repository Main Page](https://github.com/RenpyRemix/speech-bubbles)
 
 So, you want a system where each line of dialogue can appear at a set position in a frame that looks like a comic book speech bubble?
 
