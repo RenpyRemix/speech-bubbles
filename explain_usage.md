@@ -86,3 +86,12 @@ define k_think = Character(
 ```
 Hopefully the system is straight forward enough to extend to meet your needs.
 
+
+
+### Important Reading:
+
+Back to the main page [Home](README.md)
+
+The overview of the system is more fully explained in [Speech Bubbles Overview](explain_screens.md)
+
+The styling and settings for frame backgrounds are explained in [Frames & Styles](explain_frames.md)
