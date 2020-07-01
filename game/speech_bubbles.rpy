@@ -1,4 +1,27 @@
-﻿
+﻿## To view example in your game add
+##
+##  call speech_bubble_example
+##
+## somewhere in your running label script
+
+
+
+            ###########################################
+            #                                         #
+            #           To use in your game           #
+            #                                         #
+            #   Create your characters and set them   #
+            #   to use the speech bubble screen.      #
+            #   The example at the end has a couple   #
+            #   of characters to see how.             #
+            #   Maybe delete the example bits (at     #
+            #   the end of this file) once happy      #
+            #                                         #
+            ###########################################
+
+
+
+
                             ###################
                             #                 #
                             #     Styles      #
@@ -392,6 +415,13 @@ init python:
 
 
 
+            ###########################################
+            #                                         #
+            #   You can delete the example characters #
+            #   and label below once happy            #
+            #                                         #
+            ###########################################
+
 
 
                             #####################
@@ -423,12 +453,6 @@ define speech_bubble_k = Character(
     who_color="#FDD", 
     what_style="bubble_speech_text")
 
-
-init python:
-
-    # Just for this sample... so it runs
-
-    config.label_overrides['start'] = "speech_bubble_example"
     
 
 label speech_bubble_example:
@@ -462,8 +486,4 @@ label speech_bubble_example:
     speech_bubble_a "... and back to the game" (
         640, 320, show_type="bubble_thought")
 
-    if "start" in config.label_overrides:
-
-        $ del config.label_overrides['start']
-
-    jump start
+    return
